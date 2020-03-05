@@ -19,13 +19,13 @@ I have decided to create a online personal finance manager which allows the user
 ## Deployment
 
 ### Technologies Used
-    - Flask (Python based Web Application Framework)
-    - Python (Programming Language)
-    - HMTL (Programming language)
-    - CSS (Programming langauge)
-    - Git (Version Control System)
-    - Trello (Project Tracking Software)
-    - MySQL (Database)
+* Flask (Python based Web Application Framework)
+* Python (Programming Language)
+* HMTL (Programming language)
+* CSS (Programming langauge)
+* Git (Version Control System)
+* Trello (Project Tracking Software)
+* MySQL (Database)
 
 ## Risk Assessment
 
