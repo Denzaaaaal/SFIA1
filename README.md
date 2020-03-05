@@ -1,24 +1,24 @@
-H1Your Money Or Your Life Personal Finance Calculator
+#Your Money Or Your Life Personal Finance Calculator
 
-H2Index
+##Index
 
-H2Brief
+##Brief
 To create an application with utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training. The application must manipulate two tables with full CRUD functionality.
 
-H3Solution
+###Solution
 I have decided to create a online personal finance manager which allows the user to keep track of there income, expenses and investments. Due to the ammount of data an individual would generate within all 3 catagories a relational database would be extremely useful to drawing conclusions on where you are wasting money. 
 
-H2Architecture
+##Architecture
 
-H3Entity Relationship Diagram
-
-
-H2Testing
+###Entity Relationship Diagram
 
 
-H2Deployment
+##Testing
 
-H3Technologies Used
+
+##Deployment
+
+###Technologies Used
     - Flask (Python based Web Application Framework)
     - Python (Programming Language)
     - HMTL (Programming language)
@@ -27,17 +27,17 @@ H3Technologies Used
     - Trello
     - MySQL (Database)
 
-H2Risk Assessment
+##Risk Assessment
 
 
-H2Front Emd Design
+##Front Emd Design
 
-H3Wireframes
+###Wireframes
 
-H3Final Appearence
+###Final Appearence
 
 
-H2Authors
+##Authors
 Denzel Douglas
 
 
