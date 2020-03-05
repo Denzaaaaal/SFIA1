@@ -1,6 +1,18 @@
 # Your Money Or Your Life Personal Finance Manager
 
 ## Index
+* [Brief](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#brief)
+* * Solution
+* Architecture
+* *  Entity Relationship Diagram
+* Testing
+* Deployment
+* * Technologies Used
+* Risk Assessment
+* Front End Design
+* * Wireframes
+* Final appearence
+* Author
 
 ## Brief
 To create an application with utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training. The application must manipulate two tables with full CRUD functionality.
@@ -30,12 +42,12 @@ I have decided to create a online personal finance manager which allows the user
 ## Risk Assessment
 
 
-## Front Emd Design
+## Front End Design
 
 ### Wireframes
 
 ### Final Appearence
 
 
-## Authors
+## Author
 Denzel Douglas
