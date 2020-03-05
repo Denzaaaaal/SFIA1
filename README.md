@@ -2,7 +2,8 @@
 
 ## Index
 * [Brief](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#brief)
-* * [Solution](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#brief)
+* * [Solution](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#solution)
+* * [Trello Board](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Trello)
 * [Architecture](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#architecture)
 * *  [Entity Relationship Diagram](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md) # Needs Fixing
 * [Testing](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Testing)
@@ -19,6 +20,10 @@ To create an application with utilisation of supporting tools, methodologies and
 
 ### Solution
 I have decided to create a online personal finance manager which allows the user to keep track of there income, expenses and investments based on the book called [Your Money or Your Life](https://www.amazon.co.uk/Transforming-Relationship-Achieving-Financial-Independence/dp/0143115766) written by Viki Robin and Joe Dominguez. Due to the ammount of data a individual would generate within all 3 catagories, a relational database would be extremely useful to drawing conclusions on where you are wasting money. 
+
+### Trello Board
+During our pr
+
 
 ## Architecture
 
@@ -40,7 +45,9 @@ I have decided to create a online personal finance manager which allows the user
 * MySQL (Database)
 
 ## Risk Assessment
-
+| risk |  Description | Hazard | Likelihood | Impact | Solution | 
+|------|--------------|--------|------------|--------|----------|
+|      |              |        |            |        |          |
 
 ## Front End Design
 
