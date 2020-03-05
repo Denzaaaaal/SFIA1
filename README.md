@@ -45,9 +45,9 @@ During our pr
 * MySQL (Database)
 
 ## Risk Assessment
-| risk |  Description | Hazard | Likelihood | Impact | Solution | 
-|------|--------------|--------|------------|--------|----------|
-|      |              |        |            |        |          |
+|Risk|Description|Hazard|Likelihood|Impact|Solution| 
+|----|-----------|------|----------|------|--------|
+
 
 ## Front End Design
 
