@@ -2,17 +2,17 @@
 
 ## Index
 * [Brief](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#brief)
-* * Solution
-* Architecture
-* *  Entity Relationship Diagram
-* Testing
-* Deployment
-* * Technologies Used
-* Risk Assessment
-* Front End Design
-* * Wireframes
-* Final appearence
-* Author
+* * [Solution](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#brief)
+* [Architecture](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#architecture)
+* *  [Entity Relationship Diagram](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md) # Needs Fixing
+* [Testing](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Testing)
+* [Deployment](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Deployment)
+* * [Technologies Used](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Technologies)
+* [Risk Assessment](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#br) # Needs Fixing
+* [Front End Design](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md) # Needs Fixing
+* * [Wireframes](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Wireframes)
+* [Final appearence](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Final-appearence) # Needs Fixing
+* [Author](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Author)
 
 ## Brief
 To create an application with utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training. The application must manipulate two tables with full CRUD functionality.
