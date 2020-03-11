@@ -29,6 +29,8 @@ CREATE TABLE expense (
     catagory varchar(50) not null,
     account int(16) not null,
     amount int(5) not null
+    usr_id int(4), 
+    foreign key(usr_id) references user_details(id)
     );
 
 /*Creating the Investment table*/
@@ -44,6 +46,8 @@ Create table investment (
     price_today int(3) not null,
     regular_investment bit(1) not null,
     dividend_reinvestment bit(1) not null
+    usr_id int(4), 
+    foreign key(usr_id) references user_details(id)
     );
 
 Commit;
