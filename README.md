@@ -47,7 +47,7 @@ During our pr
 ## Risk Assessment
 |Risk|Description|Hazard|Likelihood|Impact|Solution| 
 |----|-----------|------|----------|------|--------|
-
+    
 
 ## Front End Design
 
