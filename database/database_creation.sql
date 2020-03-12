@@ -28,7 +28,7 @@ CREATE TABLE expense (
     description varchar(100) not null,
     catagory varchar(50) not null,
     account int(16) not null,
-    amount int(5) not null
+    amount int(5) not null,
     usr_id int(4), 
     foreign key(usr_id) references user_details(id)
     );
@@ -41,11 +41,10 @@ Create table investment (
     quantity int(4) not null,
     price int(3) not null, 
     value int(7) not null,
-    cost int(3) not null,
-    change int(2) not null,
-    price_today int(3) not null,
-    regular_investment bit(1) not null,
-    dividend_reinvestment bit(1) not null
+    cost int(3)dd not null,
+    regular_investment tinyint(1) not null,
+    dividend_reinvestment tinyint(1) not null,
+    dividend_amount float(4) not null,
     usr_id int(4), 
     foreign key(usr_id) references user_details(id)
     );

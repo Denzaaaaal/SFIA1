@@ -43,10 +43,18 @@ During our pr
 * Git (Version Control System)
 * Trello (Project Tracking Software)
 * MySQL (Database)
+* Bash (Shell Scripting lanugage)
 
 ## Risk Assessment
 |Risk|Description|Hazard|Likelihood|Impact|Solution| 
 |----|-----------|------|----------|------|--------|
+|Project is not completed ontime|Due to poor time management, the project is not completed.|Worst case scenario, marks are lost due to lack of coverage of brief.|2|5|Make good use of Kanban to manage workflow, and efficient time use of office resources.|
+|Being Hacked|Having your virtual machine being hacked|Will have to recreate program|1|5|Ensure that passwords have sufficient complexity and ports are closed off to the open internet|
+|Overrunning on GCP free data limits.|An instance is left running, or an account breach enables the resources on the account to be drained.|Worst case scenario, databases are unaccessable.|1|5|Continue monitoring GCP usage. Copy databases offline as final backup.|
+|Database security: SQL|The GCP server is breached in some way, compromising data integrity.|Worst case scenario, data is lost, or user data is compromised.|3|5|Ensure user and personal data is encrypted, and passwords hashed, before being moved to the database.|
+|Database security: SSH|Unmanaged connections cause data leak or damage, keys are lost or stolen.| Worst case scenario, GDPR noncompliance or total data compromisation.|2|5|Learn and make use of GCP's SSH key management role system, and implement it correctly.|
+|Database security: SQL-I|Unsanitised user input allows SQL injection into the database.|Worst case scenario, database is maliciously destroyed.|2|5|Ensure any user accessible inputs are sanitised, and implement permission roles.|
+|Flask password storage|Although Flask uses passwords fields, hashing isn't implemented natively.|Worst case scenario, hosted user data is found in contravension of GDPR regulation, incurring heavy fines.|4|4|Ensure hashing and data encryption is implemented before data is passed to the SQL server.|
     
 
 ## Front End Design
