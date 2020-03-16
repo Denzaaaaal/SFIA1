@@ -63,6 +63,8 @@ During our pr
 
 ### Final Appearence
 
+## Impreovements
+* Add Graph of account overview using D3
 
 ## Author
 Denzel Douglas

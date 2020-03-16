@@ -11,8 +11,8 @@ app.config["MYSQL_DB"]  = os.environ.get('MYSQLDB')
 
 mysql = MySQL(app)
 
-@app.route("/", methods = ['GET'])
-def hello():
+@app.route("/", methods = ['GET', 'POST']) # Authenicate password
+def hello(): 
     if request.method == "POST":
         details = request.form
         Username = details['username']
@@ -50,12 +50,15 @@ def sign_up():
 @app.route("/account_overview")
 def account_overview():
     cur = mysql.connection.cursor()
-    cur.execute("select * from user_details")
+    cur.execute("select username from user_details")
     mysql.connection.commit()
     cur.close()
-    return render_template("account_overview.html", title="YMOYL - Account Overview")
+    tincome = 100
+    texpense = 200
+    tinvestment = 300
+    return render_template("account_overview.html", title="YMOYL - Account Overview", tincome = tincome, texpense = texpense, tinvestment = tinvestment)
 
-@app.route("/income_overview")
+@app.route("/income_overview") 
 def income_overview():
     cur = mysql.connection.cursor()
     cur.execute("select * from income")
@@ -63,27 +66,32 @@ def income_overview():
     cur.close()
     return render_template("income_overview.html", title="YMOYL - Income Overview")
 
-@app.route("/expense_overview")
+@app.route("/expense_overview") # not working
 def expense_overview():
-    details = request.form
-    expense_date = details['expense_date']
-    company = details['company']
-    catagory = details['catagory']
-    account = details ['account']
-    ammount = details ['amount']
+    # details = request.form
+    # expense_date = details['expense_date']
+    # company = details['company']
+    # catagory = details['catagory']
+    # account = details ['account']
+    # amount = details ['amount']
+    # cur = mysql.connection.cursor()
+    # cur.execute("select * from expenses")
+    # mysql.connection.commit()
+    # cur.close()
     cur = mysql.connection.cursor()
-    cur.execute("select * from expenses")
+    cur.execute("select * from expense")
+    expenses =  cur.fetchall()
     mysql.connection.commit()
     cur.close()
-    return render_template("expense_overview.html", title = "YMOYL - Expenses Overview")
+    return render_template("expense_overview.html", title = "YMOYL - Expense Overview")
 
-@app.route("/investment_overview")
+@app.route("/investment_overview") # not working
 def investment_overview():
     cur = mysql.connection.cursor()
     cur.execute("select * from investment")
     mysql.connection.commit()
     cur.close()
-    return render_template("investment_overview", title = "YMOYL - Investment Overview")
+    return render_template("investment_overview.html", title = "YMOYL - Investment Overview")
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True)
