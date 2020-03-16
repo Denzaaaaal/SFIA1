@@ -4,9 +4,9 @@ pipeline {
     stages{
         stage('Development Environment') }
             steps{
-                sh 'chmod +x ./script/*'
-                sh './script/before_installation.sh'
-                sh './script/installation.sh'
+                sh 'chmod +x ./scripts/*'
+                sh './scripts/before_installation.sh'
+                sh './scripts/installation.sh'
 
             }
         )
