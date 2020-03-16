@@ -63,8 +63,15 @@ def income_overview():
     cur = mysql.connection.cursor()
     cur.execute("select * from income")
     mysql.connection.commit()
+    rows =  cur.fetchall()
     cur.close()
-    return render_template("income_overview.html", title="YMOYL - Income Overview")
+
+    income_list = []
+
+    for row in rows: 
+        income_list.append(row)
+
+    return render_template("income_overview.html", title="YMOYL - Income Overview", incomes = income_list)
 
 @app.route("/expense_overview") # not working
 def expense_overview():
@@ -75,23 +82,34 @@ def expense_overview():
     # account = details ['account']
     # amount = details ['amount']
     # cur = mysql.connection.cursor()
-    # cur.execute("select * from expenses")
     # mysql.connection.commit()
-    # cur.close()
     cur = mysql.connection.cursor()
     cur.execute("select * from expense")
-    expenses =  cur.fetchall()
-    mysql.connection.commit()
+    rows =  cur.fetchall()
     cur.close()
-    return render_template("expense_overview.html", title = "YMOYL - Expense Overview")
+
+    expense_list = []
+
+    for row in rows: 
+        expense_list.append(row)
+
+    return render_template("expense_overview.html", title = "YMOYL - Expense Overview", expenses = expense_list)
 
 @app.route("/investment_overview") # not working
 def investment_overview():
     cur = mysql.connection.cursor()
     cur.execute("select * from investment")
     mysql.connection.commit()
+    rows =  cur.fetchall()
+    print(rows)
     cur.close()
-    return render_template("investment_overview.html", title = "YMOYL - Investment Overview")
+    
+    investment_list = []
+
+    for row in rows: 
+        investment_list.append(row)
+    print(investment_list)
+    return render_template("investment_overview.html", title = "YMOYL - Investment Overview", investment = investment_list)
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True)

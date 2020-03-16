@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>YMOYL Online Personal Finance Manager</title>
+</head>
+<body>
+    <h1>{{title}}</h1>      
+    <p>Personal Finanace Manager</p>
+    <nav>
+      <ul>
+        <li> 
+          <!-- link one -->
+          <a href="/"> login </a>
+        </li>
+        <li> 
+          <!-- link two -->
+          <a href="/sign_up"> Sign_up </a>
+        </li>
+        <li>
+          <!-- link three -->
+          <a href="/account_overview"> Accounts Overview </a>
+        </li>
+        <li>
+          <!-- link four -->
+          <a href= "{{ url_for('expense_overview')}}" > Expense Overview </a>
+        </li>
+        <li>
+          <!-- link five -->
+          <a href="/investment_overview"> Investment Overview </a>
+        </li>
+        <li>
+          <!-- link six -->
+          <a href="/income_overview"> Income Overview </a>
+        </li>
+      </ul>
+    </nav>
+
+{% block body %}
+{% block subcontent %}
+{% endblock %}
+{% endblock %}
+</body>
+
+</html>

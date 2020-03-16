@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block subcontent %}
+<div>
+<table class="centered thick-border" style="width:70%">
+  <tr>
+    <th>Ticker</th>
+    <th>Description</th> 
+    <th>Quantity</th>
+    <th>Price</th> 
+    <th>Value</th>
+    <th>Cost</th> 
+    <th>Regular Investment</th>
+    <th>Dividend Reinvestment</th>
+    <th>Dividend Amount</th>
+
+{% for i in investment %} 
+    </tr>
+    <th>{{ i[1] }} </th>
+    <th>{{ i[2] }}</th> 
+    <th>{{ i[3] }}</th>
+    <th>{{ i[4] }}</th> 
+    <th>{{ i[5] }}</th>
+    <th>{{ i[6] }}</th>
+    <th>{{ i[7] }}</th> 
+    <th>{{ i[8] }}</th>
+    <th>{{ i[9] }}</th>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

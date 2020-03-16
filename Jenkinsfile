@@ -9,6 +9,6 @@ pipeline {
                 sh './scripts/installation.sh'
 
             }
-        )
+        }
     }
 }

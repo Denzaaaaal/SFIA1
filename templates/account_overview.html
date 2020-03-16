@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block subcontent %}
+
+<h2> Welcome USER # pull data from user table </h2>
+
+<h3>Account Overview</h3>
+
+<table style="width:70%">
+  <tr>
+    <th>Accounts</th>
+    <th>Total</th> 
+  </tr>
+  <tr>
+    <td> <a href="/income_overview"> Income Overview </a></td>
+    <td>{{ tincome }}</td>
+  </tr>
+  <tr>
+    <td><a href="/expense_overview"> Expense Overview </a></td>
+    <td>{{ texpense }}</td>
+  </tr>
+  <tr>
+    <td><a href="/investment_overview"> Investment Overview </a></td>
+    <td>{{ tinvestment }}</td>
+  </tr>
+</table>
+
+{% endblock %}
+
