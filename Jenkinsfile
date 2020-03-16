@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Development Environment') (
+    stages{
+        stage('Development Environment') }
             steps{
                 sh 'chmod +x ./script/*'
                 sh './script/before_installation.sh'
