@@ -12,9 +12,9 @@
     <th>Regular Investment</th>
     <th>Dividend Reinvestment</th>
     <th>Dividend Amount</th>
-
+  </tr>
 {% for i in investment %} 
-    </tr>
+  <tr>
     <th>{{ i[1] }} </th>
     <th>{{ i[2] }}</th> 
     <th>{{ i[3] }}</th>
@@ -24,8 +24,29 @@
     <th>{{ i[7] }}</th> 
     <th>{{ i[8] }}</th>
     <th>{{ i[9] }}</th>
-    </tr>
+  </tr>
     {% endfor %}
 </table>
+<form method = "POST" action="">
+  <label for="expense_date">Ticker: </label>
+  <input type="text" name="expense_date"><br><br>
+  <label for="company">Description:</label>
+  <input type="text" name="company"><br><br>
+    <label for="description">Quantity:</label>
+  <input type="text" name="quantity"><br><br>
+    <label for="catagory">Price:</label>
+  <input type="text" name="price"><br><br>
+    <label for="account">Value:</label>
+  <input type="text" name="value"><br><br>
+    <label for="amount">Cost:</label>
+  <input type="text" name="cost"><br><br>
+    <label for="amount">Regular Investment:</label>
+  <input type="text" name="regular_investment"><br><br>
+    <label for="amount">Dividend Investment:</label>
+  <input type="text" name="dividend_investment"><br><br>
+    <label for="amount">Dividend Amount:</label>
+  <input type="text" name="dividend_amount"><br><br>
+  <input type = "submit">
+  </form>
 </div>
 {% endblock %}

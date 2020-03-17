@@ -1,7 +1,6 @@
 {% extends 'layout.html' %}
 {% block subcontent %}
 <div>
-    
 <table class="centered thick-border" style="width:70%">
   <tr>
     <th>Expense Date</th>
@@ -9,7 +8,7 @@
     <th>Description</th>
     <th>Catagory</th> 
     <th>Account</th>
-    <th>Amount {{ flag1 }}</th> 
+    <th>Amount</th> 
   </tr>
 {% for i in expenses %} 
 <tr>
@@ -22,6 +21,21 @@
 </tr>
     {% endfor %}
 </table>
-
+<form method = "POST" action="">
+  <label for="expense_date">Expense Date: </label>
+  <input type="text" name="expense_date"><br><br>
+  <label for="company">Company:</label>
+  <input type="text" name="company"><br><br>
+    <label for="description">Description:</label>
+  <input type="text" name="description"><br><br>
+    <label for="catagory">Catagory:</label>
+  <input type="text" name="catagory"><br><br>
+    <label for="account">Account:</label>
+  <input type="text" name="account"><br><br>
+    <label for="amount">Amount:</label>
+  <input type="text" name="amount"><br><br>
+  <input type = "submit">
+  
+  </form>
 </div>
 {% endblock %}

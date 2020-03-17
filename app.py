@@ -58,7 +58,7 @@ def account_overview():
     tinvestment = 300
     return render_template("account_overview.html", title="YMOYL - Account Overview", tincome = tincome, texpense = texpense, tinvestment = tinvestment)
 
-@app.route("/income_overview") 
+@app.route("/income_overview", methods = ['GET','POST']) 
 def income_overview():
     cur = mysql.connection.cursor()
     cur.execute("select * from income")
@@ -71,44 +71,70 @@ def income_overview():
     for row in rows: 
         income_list.append(row)
 
+    if request.method == 'POST':
+        details = request.form
+        Date_Of_Income = details['date_of_income']
+        Company = details['company']
+        Amount = details['amount']
+        cur = mysql.connection.cursor()
+        cur.execute("insert into income (date_of_income, company, amount) values (%s, %s, %s);", (Date_Of_Income, Company, int(Amount)))
+        mysql.connection.commit()
+
     return render_template("income_overview.html", title="YMOYL - Income Overview", incomes = income_list)
 
-@app.route("/expense_overview") # not working
+@app.route("/expense_overview", methods = ['GET','POST'])
 def expense_overview():
-    # details = request.form
-    # expense_date = details['expense_date']
-    # company = details['company']
-    # catagory = details['catagory']
-    # account = details ['account']
-    # amount = details ['amount']
-    # cur = mysql.connection.cursor()
-    # mysql.connection.commit()
     cur = mysql.connection.cursor()
     cur.execute("select * from expense")
     rows =  cur.fetchall()
     cur.close()
-
+    
     expense_list = []
 
     for row in rows: 
         expense_list.append(row)
 
+    if request.method == 'POST':
+        details = request.form
+        Expense_Date = details['expense_date']
+        Company = details['company']
+        Description = details['description']
+        Catagory = details['catagory']
+        Account = details['account']
+        Amount = details['amount']
+        cur = mysql.connection.cursor()
+        cur.execute("insert into expense (expense_date, company, description, catagory, account, amount) values (%s, %s, %s, %s, %s, %s);", (Expense_Date, Company, Description, Catagory, Account, int(Amount)))
+        mysql.connection.commit()
+        
     return render_template("expense_overview.html", title = "YMOYL - Expense Overview", expenses = expense_list)
 
-@app.route("/investment_overview") # not working
+@app.route("/investment_overview", methods = ['GET','POST']) 
 def investment_overview():
     cur = mysql.connection.cursor()
     cur.execute("select * from investment")
-    mysql.connection.commit()
     rows =  cur.fetchall()
-    print(rows)
     cur.close()
     
     investment_list = []
 
     for row in rows: 
         investment_list.append(row)
-    print(investment_list)
+
+    if request.method == 'POST':
+        details = request.form
+        Ticker = details['ticker']
+        Description = details['description']
+        Quantity = details['quantity']
+        Price = details['price']
+        Value = details['value']
+        Cost = details['cost']
+        Regular_Investment = details['regular_investment']
+        Dividend_Investment = details['dividend_investment']
+        Dividend_Amount = details['dividend_amount']
+        cur = mysql.connection.cursor()
+        cur.execute("insert into investment (ticker, description, quantity, price, value, cost, regular_investment, dividend_reinvestment, dividend_amount) values (%s, %s, %s, %s, %s, %s, %s, %s, %s);", (Ticker, Description, Quantity, Price, Value, Cost, Regular_Investment, Dividend_Investment, Dividend_Amount))
+        mysql.connection.commit()
+
     return render_template("investment_overview.html", title = "YMOYL - Investment Overview", investment = investment_list)
 
 if __name__ == "__main__":
