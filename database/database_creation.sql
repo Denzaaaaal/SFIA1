@@ -36,12 +36,12 @@ CREATE TABLE expense (
 /*Creating the Investment table*/
 create table investment (
     id int(4) primary key not null auto_increment,
-    ticker varchar(5) not null,
+    ticker varchar(6) not null,
     description varchar(100) not null,
     quantity int(4) not null,
-    price int(3) not null,
-    value int(7) not null,
-    cost int(3) not null,
+    price float(3) not null,
+    value float(7) not null,
+    cost float(3) not null,
     regular_investment tinyint(1) not null,
     dividend_reinvestment tinyint(1) not null,
     dividend_amount float(4) not null,
