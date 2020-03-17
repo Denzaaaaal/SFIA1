@@ -5,7 +5,8 @@ import random
 card_no = []
 counter = 0
 
-while counter >= 8
+while counter >= 8:
+    randint.random()
 
 
 
