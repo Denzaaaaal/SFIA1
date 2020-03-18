@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_mysqldb import MySQL
 import os
 
@@ -103,9 +103,13 @@ def expense_overview():
         Account = details['account']
         Amount = details['amount']
         cur = mysql.connection.cursor()
-        cur.execute("insert into expense (expense_date, company, description, catagory, account, amount) values (%s, %s, %s, %s, %s, %s);", (Expense_Date, Company, Description, Catagory, Account, int(Amount)))
-        mysql.connection.commit()
-        
+        if request.form['action'] == 'submit':
+            cur.execute("insert into expense (expense_date, company, description, catagory, account, amount) values (%s, %s, %s, %s, %s, %s, %s);", (Expense_Date, Company, Description, Catagory, Account, int(Amount)))
+        if request.form['action'] == 'delete':
+            cur.execute("DELETE FROM expense WHERE expense_date = %s and description = %s", (Expense_Date, Description))
+        mysql.connection.commit()   
+        cur.close()
+        return redirect(url_for('expense_overview'))     
     return render_template("expense_overview.html", title = "YMOYL - Expense Overview", expenses = expense_list)
 
 @app.route("/investment_overview", methods = ['GET','POST']) 
@@ -136,6 +140,11 @@ def investment_overview():
         mysql.connection.commit()
 
     return render_template("investment_overview.html", title = "YMOYL - Investment Overview", investment = investment_list)
+
+
+    
+
+
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True)

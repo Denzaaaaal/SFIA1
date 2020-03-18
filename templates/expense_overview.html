@@ -12,10 +12,11 @@
   </tr>
 {% for i in expenses %} 
 <tr>
-    <th>{{ i[1] }} </th>
-    <th>{{ i[2] }}</th> 
-    <th>{{ i[3] }}</th>
-    <th>{{ i[4] }}</th> 
+    <th>{{ i[0] }} </th>
+    <th>{{ i[1] }}</th> 
+    <th>{{ i[2] }}</th>
+    <th>{{ i[3] }}</th> 
+    <th>{{ i[4] }}</th>
     <th>{{ i[5] }}</th>
     <th>{{ i[6] }}</th>
 </tr>
@@ -34,7 +35,13 @@
   <input type="text" name="account"><br><br>
     <label for="amount">Amount:</label>
   <input type="text" name="amount"><br><br>
-  <input type = "submit">
+
+
+
+<p><button name="action" value="submit">Submit</button></p>
+<p><button name="action" value="delete">Delete</button></p>
+<p><button name="action" Value="update">Update</button></p>
+  
   
   </form>
 </div>
