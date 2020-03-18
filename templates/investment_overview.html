@@ -3,6 +3,7 @@
 <div>
 <table class="centered thick-border" style="width:70%">
   <tr>
+    <th>ID</th>
     <th>Ticker</th>
     <th>Description</th> 
     <th>Quantity</th>
@@ -15,6 +16,7 @@
   </tr>
 {% for i in investment %} 
   <tr>
+    <th>{{ i[0] }}</th>
     <th>{{ i[1] }} </th>
     <th>{{ i[2] }}</th> 
     <th>{{ i[3] }}</th>
@@ -28,25 +30,30 @@
     {% endfor %}
 </table>
 <form method = "POST" action="">
-  <label for="expense_date">Ticker: </label>
-  <input type="text" name="expense_date"><br><br>
-  <label for="company">Description:</label>
-  <input type="text" name="company"><br><br>
-    <label for="description">Quantity:</label>
+  <label for="id">ID:</label>
+  <input type="text" name="id"><br><br>
+  <label for="ticker">Ticker:</label>
+  <input type="text" name="ticker"><br><br>
+  <label for="description">Description:</label>
+  <input type="text" name="description"><br><br>
+  <label for="quantity">Quantity:</label>
   <input type="text" name="quantity"><br><br>
-    <label for="catagory">Price:</label>
+  <label for="price">Price:</label>
   <input type="text" name="price"><br><br>
-    <label for="account">Value:</label>
+  <label for="Value">Value:</label>
   <input type="text" name="value"><br><br>
-    <label for="amount">Cost:</label>
+  <label for="cost">Cost:</label>
   <input type="text" name="cost"><br><br>
-    <label for="amount">Regular Investment:</label>
+  <label for="regular_investment">Regular Investment:</label>
   <input type="text" name="regular_investment"><br><br>
-    <label for="amount">Dividend Investment:</label>
+  <label for="dividend_investment">Dividend Investment:</label>
   <input type="text" name="dividend_investment"><br><br>
-    <label for="amount">Dividend Amount:</label>
+  <label for="dividend_amount">Dividend Amount:</label>
   <input type="text" name="dividend_amount"><br><br>
-  <input type = "submit">
+  <!-- Buttons -->
+  <p><button name="action" value="submit">Submit</button></p>
+  <p><button name="action" value="delete">Delete</button></p>
+  <p><button name="action" Value="update">Update</button></p>
   </form>
 </div>
 {% endblock %}

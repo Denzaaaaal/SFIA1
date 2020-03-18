@@ -3,6 +3,7 @@
 <div>
 <table class="centered thick-border" style="width:70%">
   <tr>
+    <th>ID</th></th>
     <th>Expense Date</th>
     <th>Company</th> 
     <th>Description</th>
@@ -11,38 +12,36 @@
     <th>Amount</th> 
   </tr>
 {% for i in expenses %} 
-<tr>
-    <th>{{ i[0] }} </th>
+  <tr>
+    <th>{{ i[0] }}</th>  
     <th>{{ i[1] }}</th> 
     <th>{{ i[2] }}</th>
     <th>{{ i[3] }}</th> 
     <th>{{ i[4] }}</th>
     <th>{{ i[5] }}</th>
     <th>{{ i[6] }}</th>
-</tr>
-    {% endfor %}
+  </tr>
+{% endfor %}
 </table>
 <form method = "POST" action="">
+  <label for="id">ID: </label>
+  <input type="text" name="id"><br><br>
   <label for="expense_date">Expense Date: </label>
   <input type="text" name="expense_date"><br><br>
   <label for="company">Company:</label>
   <input type="text" name="company"><br><br>
-    <label for="description">Description:</label>
+  <label for="description">Description:</label>
   <input type="text" name="description"><br><br>
-    <label for="catagory">Catagory:</label>
+  <label for="catagory">Catagory:</label>
   <input type="text" name="catagory"><br><br>
-    <label for="account">Account:</label>
+  <label for="account">Account:</label>
   <input type="text" name="account"><br><br>
-    <label for="amount">Amount:</label>
+  <label for="amount">Amount:</label>
   <input type="text" name="amount"><br><br>
-
-
-
-<p><button name="action" value="submit">Submit</button></p>
-<p><button name="action" value="delete">Delete</button></p>
-<p><button name="action" Value="update">Update</button></p>
-  
-  
-  </form>
+  <!-- Buttons -->
+  <p><button name="action" value="submit">Submit</button></p>
+  <p><button name="action" value="delete">Delete</button></p>
+  <p><button name="action" Value="update">Update</button></p>
+</form>
 </div>
 {% endblock %}

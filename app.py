@@ -58,7 +58,7 @@ def account_overview():
     tinvestment = 300
     return render_template("account_overview.html", title="YMOYL - Account Overview", tincome = tincome, texpense = texpense, tinvestment = tinvestment)
 
-@app.route("/income_overview", methods = ['GET','POST']) 
+@app.route("/income_overview", methods = ['GET','POST']) # Completed
 def income_overview():
     cur = mysql.connection.cursor()
     cur.execute("select * from income")
@@ -73,16 +73,22 @@ def income_overview():
 
     if request.method == 'POST':
         details = request.form
+        ID = details['id']
         Date_Of_Income = details['date_of_income']
         Company = details['company']
         Amount = details['amount']
         cur = mysql.connection.cursor()
-        cur.execute("insert into income (date_of_income, company, amount) values (%s, %s, %s);", (Date_Of_Income, Company, int(Amount)))
-        mysql.connection.commit()
-
+        if request.form['action'] == 'submit':
+            cur.execute("insert into income (id, date_of_income, company, amount) values (%s, %s, %s, %s);", (ID, Date_Of_Income, Company, int(Amount)))
+        if request.form['action'] == 'delete':
+            cur.execute("delete from income where id = %s and date_of_income = %s and amount = %s;", (ID, Date_Of_Income, int(Amount)))
+        if request.form ['action'] == 'update':
+            cur.execute("update income set date_of_income = %s, company = %s, amount = %s where id = %s;", (Date_Of_Income, Company, int(Amount), ID)) 
+        mysql.connection.commit() 
+        return redirect(url_for('income_overview'))
     return render_template("income_overview.html", title="YMOYL - Income Overview", incomes = income_list)
 
-@app.route("/expense_overview", methods = ['GET','POST'])
+@app.route("/expense_overview", methods = ['GET','POST']) # Completed
 def expense_overview():
     cur = mysql.connection.cursor()
     cur.execute("select * from expense")
@@ -96,6 +102,7 @@ def expense_overview():
 
     if request.method == 'POST':
         details = request.form
+        ID = details['id']
         Expense_Date = details['expense_date']
         Company = details['company']
         Description = details['description']
@@ -104,15 +111,17 @@ def expense_overview():
         Amount = details['amount']
         cur = mysql.connection.cursor()
         if request.form['action'] == 'submit':
-            cur.execute("insert into expense (expense_date, company, description, catagory, account, amount) values (%s, %s, %s, %s, %s, %s, %s);", (Expense_Date, Company, Description, Catagory, Account, int(Amount)))
+            cur.execute("insert into expense (id, expense_date, company, description, catagory, account, amount) values (%s, %s, %s, %s, %s, %s, %s);", (ID, Expense_Date, Company, Description, Catagory, Account, int(Amount)))
         if request.form['action'] == 'delete':
-            cur.execute("DELETE FROM expense WHERE expense_date = %s and description = %s", (Expense_Date, Description))
+            cur.execute("DELETE FROM expense WHERE id = %s and expense_date = %s and description = %s;", (ID, Expense_Date, Description))
+        if request.form['action'] == 'update':
+            cur.execute("update expense set expense_date = %s, company = %s, description = %s, catagory = %s, account = %s, amount = %s where id = %s;", (Expense_Date, Company, Description, Catagory, Account, int(Amount), ID))
         mysql.connection.commit()   
         cur.close()
         return redirect(url_for('expense_overview'))     
     return render_template("expense_overview.html", title = "YMOYL - Expense Overview", expenses = expense_list)
 
-@app.route("/investment_overview", methods = ['GET','POST']) 
+@app.route("/investment_overview", methods = ['GET','POST']) # Completed
 def investment_overview():
     cur = mysql.connection.cursor()
     cur.execute("select * from investment")
@@ -126,6 +135,7 @@ def investment_overview():
 
     if request.method == 'POST':
         details = request.form
+        ID = details['id']
         Ticker = details['ticker']
         Description = details['description']
         Quantity = details['quantity']
@@ -136,15 +146,15 @@ def investment_overview():
         Dividend_Investment = details['dividend_investment']
         Dividend_Amount = details['dividend_amount']
         cur = mysql.connection.cursor()
-        cur.execute("insert into investment (ticker, description, quantity, price, value, cost, regular_investment, dividend_reinvestment, dividend_amount) values (%s, %s, %s, %s, %s, %s, %s, %s, %s);", (Ticker, Description, Quantity, Price, Value, Cost, Regular_Investment, Dividend_Investment, Dividend_Amount))
+        if request.form['action'] == 'submit':
+            cur.execute("insert into investment (id, ticker, description, quantity, price, value, cost, regular_investment, dividend_reinvestment, dividend_amount) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", (ID, Ticker, Description, Quantity, Price, Value, Cost, Regular_Investment, Dividend_Investment, Dividend_Amount))
+        if request.form['action'] == 'delete':
+            cur.execute("delete from investment where id = %s and ticker = %s and description = %s;", (ID, Ticker, Description))
+        if request.form['action'] == 'update':
+            cur.execute("update investment set ticker = %s, description = %s, quantity = %s, price = %s, value = %s, cost = %s, regular_investment = %s, dividend_reinvestment = %s, dividend_amount = %s where id = %s;", (Ticker, Description, Quantity, Price, Value, Cost, Regular_Investment, Dividend_Investment, Dividend_Amount, ID))
         mysql.connection.commit()
-
+        return redirect(url_for('investment_overview'))
     return render_template("investment_overview.html", title = "YMOYL - Investment Overview", investment = investment_list)
-
-
-    
-
-
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True)
