@@ -22,7 +22,7 @@ To create an application with utilisation of supporting tools, methodologies and
 I have decided to create a online personal finance manager which allows the user to keep track of there income, expenses and investments based on the book called [Your Money or Your Life](https://www.amazon.co.uk/Transforming-Relationship-Achieving-Financial-Independence/dp/0143115766) written by Viki Robin and Joe Dominguez. Due to the ammount of data a individual would generate within all 3 catagories, a relational database would be extremely useful to drawing conclusions on where you are wasting money. 
 
 ### Trello Board
-During our pr
+
 
 
 ## Architecture
@@ -31,7 +31,7 @@ During our pr
 
 
 ## Testing
-
+Testing wa. Urllib3 was used to determine if the pages can be called successfully by checking the code that is sent. The se
 
 ## Deployment
 
@@ -55,7 +55,6 @@ During our pr
 |Database security: SSH|Unmanaged connections cause data leak or damage, keys are lost or stolen.| Worst case scenario, GDPR noncompliance or total data compromisation.|2|5|Learn and make use of GCP's SSH key management role system, and implement it correctly.|
 |Database security: SQL-I|Unsanitised user input allows SQL injection into the database.|Worst case scenario, database is maliciously destroyed.|2|5|Ensure any user accessible inputs are sanitised, and implement permission roles.|
 |Flask password storage|Although Flask uses passwords fields, hashing isn't implemented natively.|Worst case scenario, hosted user data is found in contravension of GDPR regulation, incurring heavy fines.|4|4|Ensure hashing and data encryption is implemented before data is passed to the SQL server.|
-    
 
 ## Front End Design
 
@@ -63,7 +62,8 @@ During our pr
 
 ### Final Appearence
 
-## Impreovements
+## Improvements
+* Create CSS for website
 * Add Graph of account overview using D3
 
 ## Author
