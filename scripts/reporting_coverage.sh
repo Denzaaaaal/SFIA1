@@ -1,4 +1,5 @@
 #!/bin/bash
 
+mkdir ./logs
 pytest test/testing.py
-coverage report -m
+coverage report -m < ./logs

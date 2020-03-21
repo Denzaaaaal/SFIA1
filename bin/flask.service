@@ -1,0 +1,9 @@
+[Unit]
+Description=SFIA1 MVP
+[Service]
+User=Admin
+
+ExecStart=/home/Admin/projects/SFIA1/scripts/installation.sh
+
+[Install]
+WantedBy=multi-user.target
