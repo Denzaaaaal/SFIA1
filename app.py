@@ -60,12 +60,7 @@ def sign_up():
         rows = cur.fetchall()
         cur.close()
         return redirect(url_for('login'))
-
-        info = []
-
-    for row in rows: 
-        info.append(row)
-    return render_template("sign_up.html", title = "YMOYL - Sign up", info1 = info)
+    return render_template("sign_up.html", title = "YMOYL - Sign up")
 
 # Reading total values from income, investment and expense table for a specific user
 @app.route("/account_overview", methods = ['GET']) # Add up totals for user
