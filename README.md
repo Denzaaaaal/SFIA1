@@ -25,8 +25,10 @@ I have decided to create a online personal finance manager which allows the user
 Trello was the chosen tool used to manage the project and is a software implementation of the kanban board. This particular view helped me to adhere to the agile methodology and colour code the project in terms of difficulty (Green(Easy),Yellow(Mediium),Red(Difficult))enabling me to prioritise the development of certain features over others. The work was only considered done when the feature was tested and implimented into the application.
 
 #### Start point
+![start_point](https://github.com/Denzaaaaal/SFIA1/blob/developer/images/start_point.JPG)
 
 #### End point
+![end_point](https://github.com/Denzaaaaal/SFIA1/blob/developer/images/end_point.JPG)
 
 ## Architecture
 
