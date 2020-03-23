@@ -8,10 +8,11 @@ pip3 install flask-mysqldb
 pip3 install urllib
 pip3 install pytest
 pip3 install coverage
+pip3 install gunicorn
 source ~/.bashrc
 echo "Starting application..."
 # Uses python app to launch the web application
-python3 app.py
+#python3 app.py
 
 # Uses Gunicorn to launch the application
-# gunicorn --workers=4 --bind=0.0.0.0:5000 app:app
+gunicorn --workers=4 --bind=0.0.0.0:5000 app:app
