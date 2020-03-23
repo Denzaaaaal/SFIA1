@@ -5,14 +5,14 @@
 * * [Solution](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#solution)
 * * [Trello Board](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Trello)
 * [Architecture](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#architecture)
-* *  [Entity Relationship Diagram](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md) # Needs Fixing
+* *  [Entity Relationship Diagram](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md) # Broken Link
 * [Testing](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Testing)
 * [Deployment](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Deployment)
 * * [Technologies Used](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Technologies)
-* [Risk Assessment](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#br) # Needs Fixing
-* [Front End Design](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md) # Needs Fixing
+* [Risk Assessment](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#br) # Broken Link
+* [Front End Design](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md) # Broken Link
 * * [Wireframes](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Wireframes)
-* [Final appearence](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Final-appearence) # Needs Fixing
+* [Final appearence](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Final-appearence) # Broken Link
 * [Author](https://github.com/Denzaaaaal/SFIA1/blob/developer/README.md#Author)
 
 ## Brief
@@ -22,24 +22,26 @@ To create an application with utilisation of supporting tools, methodologies and
 I have decided to create a online personal finance manager which allows the user to keep track of there income, expenses and investments based on the book called [Your Money or Your Life](https://www.amazon.co.uk/Transforming-Relationship-Achieving-Financial-Independence/dp/0143115766) written by Viki Robin and Joe Dominguez. Due to the ammount of data a individual would generate within all 3 catagories, a relational database would be extremely useful to drawing conclusions on where you are wasting money. 
 
 ### Trello Board
+Trello was the chosen tool used to manage the project and is a software implementation of the kanban board. This particular view helped me to adhere to the agile methodology and colour code the project in terms of difficulty (Green(Easy),Yellow(Mediium),Red(Difficult))enabling me to prioritise the development of certain features over others. The work was only considered done when the feature was tested and implimented into the application.
 
+#### Start point
 
+#### End point
 
 ## Architecture
 
 ### Entity Relationship Diagram
 
-
 ## Testing
-Testing wa. Urllib3 was used to determine if the pages can be called successfully by checking the code that is sent. The se
+Two types of Testing was done to the application that was created. The first test was done using Urllib3 to determine if the pages can be called successfully by checking the HTTP code that is recieved using pytest. The second test was done using MySQL which tested the CRUD Functionality of the database. The output for these reports are stored in the ./log directory which is created when the scripts are run.
 
 ## Deployment
 
 ### Technologies Used
+* Jenkins (Automation Server)
 * Flask (Python based Web Application Framework)
 * Python (Programming Language)
 * HMTL (Programming language)
-* CSS (Programming langauge)
 * Git (Version Control System)
 * Trello (Project Tracking Software)
 * MySQL (Database)
@@ -55,12 +57,6 @@ Testing wa. Urllib3 was used to determine if the pages can be called successfull
 |Database security: SSH|Unmanaged connections cause data leak or damage, keys are lost or stolen.| Worst case scenario, GDPR noncompliance or total data compromisation.|2|5|Learn and make use of GCP's SSH key management role system, and implement it correctly.|
 |Database security: SQL-I|Unsanitised user input allows SQL injection into the database.|Worst case scenario, database is maliciously destroyed.|2|5|Ensure any user accessible inputs are sanitised, and implement permission roles.|
 |Flask password storage|Although Flask uses passwords fields, hashing isn't implemented natively.|Worst case scenario, hosted user data is found in contravension of GDPR regulation, incurring heavy fines.|4|4|Ensure hashing and data encryption is implemented before data is passed to the SQL server.|
-
-## Front End Design
-
-### Wireframes
-
-### Final Appearence
 
 ## Improvements
 * Create CSS for website
